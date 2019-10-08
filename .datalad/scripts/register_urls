@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Add simple http:// urls to individual files
+
+set -eu
+
+for f in */*; do k=$(git annex lookupkey $f); echo $k https://buzsakilab.nyumc.org/datasets/NWB/SenzaiNeuron2017/$f; done | git annex registerurl --batch
